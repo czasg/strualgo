@@ -16,9 +16,9 @@ func QuickSortASC[Number basis.Number](nums []Number) []Number {
 		}
 		left := 0
 		right := len(nums) - 1
-		tmpNum := nums[left]
+		x := nums[left]
 		for {
-			for left < right && nums[right] >= tmpNum {
+			for left < right && nums[right] >= x {
 				right--
 			}
 			if left >= right {
@@ -26,7 +26,7 @@ func QuickSortASC[Number basis.Number](nums []Number) []Number {
 			}
 			nums[left] = nums[right]
 			left++
-			for left < right && nums[left] <= tmpNum {
+			for left < right && nums[left] <= x {
 				left++
 			}
 			if left >= right {
@@ -35,7 +35,7 @@ func QuickSortASC[Number basis.Number](nums []Number) []Number {
 			nums[right] = nums[left]
 			right--
 		}
-		nums[left] = tmpNum
+		nums[left] = x
 		quickSortASC(nums[:left])
 		quickSortASC(nums[right+1:])
 	}
@@ -55,9 +55,9 @@ func QuickSortDESC[Number basis.Number](nums []Number) []Number {
 		}
 		left := 0
 		right := len(nums) - 1
-		tmpNum := nums[left]
+		x := nums[left]
 		for {
-			for left < right && nums[right] <= tmpNum {
+			for left < right && nums[right] <= x {
 				right--
 			}
 			if left >= right {
@@ -65,7 +65,7 @@ func QuickSortDESC[Number basis.Number](nums []Number) []Number {
 			}
 			nums[left] = nums[right]
 			left++
-			for left < right && nums[left] >= tmpNum {
+			for left < right && nums[left] >= x {
 				left++
 			}
 			if left >= right {
@@ -74,7 +74,7 @@ func QuickSortDESC[Number basis.Number](nums []Number) []Number {
 			nums[right] = nums[left]
 			right--
 		}
-		nums[left] = tmpNum
+		nums[left] = x
 		quickSortDESC(nums[:left])
 		quickSortDESC(nums[right+1:])
 	}
