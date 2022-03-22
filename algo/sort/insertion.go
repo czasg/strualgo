@@ -15,10 +15,10 @@ func InsertionSortASC[Number basis.Number](nums []Number) []Number {
 		for index > 0 {
 			if newNums[index-1] > newNums[index] {
 				newNums[index-1], newNums[index] = newNums[index], newNums[index-1]
-			} else {
-				break
+				index--
+				continue
 			}
-			index--
+			break
 		}
 	}
 	return newNums
