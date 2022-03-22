@@ -9,6 +9,9 @@ func QuickSortASC[Number basis.Number](nums []Number) []Number {
 	for index, num := range nums {
 		newNums[index] = num
 	}
+	if len(newNums) < 2 {
+		return newNums
+	}
 	var quickSortASC func(nums []Number)
 	quickSortASC = func(nums []Number) {
 		if len(nums) < 2 {

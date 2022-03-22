@@ -7,6 +7,9 @@ func BubbleSortASC[Number basis.Number](nums []Number) []Number {
 	for index, num := range nums {
 		newNums[index] = num
 	}
+	if len(newNums) < 2 {
+		return newNums
+	}
 	for i := 0; i < len(newNums)-1; i++ {
 		for j := 0; j < len(newNums)-i-1; j++ {
 			if newNums[j] > newNums[j+1] {
