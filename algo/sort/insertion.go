@@ -13,6 +13,8 @@ func InsertionSortASC(nums []int) []int {
         for index > 0 {
             if newNums[index-1] > newNums[index] {
                 newNums[index-1], newNums[index] = newNums[index], newNums[index-1]
+            } else {
+                break
             }
             index--
         }
@@ -33,6 +35,8 @@ func InsertionSortDESC(nums []int) []int {
         for index > 0 {
             if newNums[index-1] < newNums[index] {
                 newNums[index-1], newNums[index] = newNums[index], newNums[index-1]
+            } else {
+                break
             }
             index--
         }
